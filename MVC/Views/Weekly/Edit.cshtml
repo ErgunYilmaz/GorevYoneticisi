@@ -1,0 +1,26 @@
+﻿@model WeeklyPlan
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <form role="form" asp-action="Edit" asp-controller="Weekly" method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="card-card-primary">
+
+                    <div class="card-body">
+                        <label>Plan</label>
+                        <input asp-for="weeklyPlan" type="text" class="form-control" placeholder="Haftalık plan girin" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+        </div>
+    </form>
+</div>
+

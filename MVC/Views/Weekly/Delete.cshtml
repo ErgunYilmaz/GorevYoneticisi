@@ -1,0 +1,17 @@
+﻿@model WeeklyPlan
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <form role="form" asp-action="Delete" asp-controller="Weekly" method="post">
+
+            <p>@Model.weeklyPlan planını silmek istediğinizden emin misiniz?</p>
+            <button class="btn btn-danger">Evet</button>
+            <a asp-action="Index" asp-controller="Daily" class="btn">Hayır</a>
+        </form>
+    </div>
+</div>
+

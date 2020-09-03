@@ -1,0 +1,16 @@
+﻿@model MontlyPlan
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <form role="form" asp-action="Delete" asp-controller="Mountly" method="post">
+
+            <p>@Model.mountlyPlan planını silmek istediğinizden emin misiniz?</p>
+            <button class="btn btn-danger">Evet</button>
+            <a asp-action="Index" asp-controller="Mountly" class="btn">Hayır</a>
+        </form>
+    </div>
+</div>

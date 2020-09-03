@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DAL.WeeklyPlan>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a asp-action="Create" asp-controller="Weekly" class="btn btn-primary float-right">Haftalık Plan Ekle</a>
+    </div>
+    <div class="card-body">
+        <table id="dailytable" class="table table-striped">
+            <thead>
+                <tr>
+                    
+                    <th>Açıklama</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.weeklyPlan</td>
+                        <td>
+                            <a asp-controller="Weekly" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm btn-warning">Planı Güncelle</a>
+                            <a asp-controller="Weekly" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn-danger">Planı Sil</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script>
+    $(document).ready(function () {
+            $('#dailytable').DataTable();
+        });</script>
+
+
+    }
